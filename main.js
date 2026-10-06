@@ -155,6 +155,20 @@
   var progressEls = Array.prototype.slice.call(document.querySelectorAll("[data-progress]"));
   var pinEls = Array.prototype.slice.call(document.querySelectorAll("[data-pin]"));
   var hero = document.querySelector(".hero");
+  var heroTitle = document.querySelector(".hero__title");
+  if(heroTitle && fine){
+    heroTitle.addEventListener("pointermove", function(e){
+      var rect = heroTitle.getBoundingClientRect();
+      var x = (e.clientX - rect.left) / rect.width * 2 - 1;
+      var y = (e.clientY - rect.top) / rect.height * 2 - 1;
+      heroTitle.style.setProperty("--tilt-x", clamp(x, -1, 1).toFixed(3));
+      heroTitle.style.setProperty("--tilt-y", clamp(y, -1, 1).toFixed(3));
+    });
+    heroTitle.addEventListener("pointerleave", function(){
+      heroTitle.style.setProperty("--tilt-x", "0");
+      heroTitle.style.setProperty("--tilt-y", "0");
+    });
+  }
   var wordmark = document.querySelector("[data-footer-wordmark]");
   var wordmarkFill = document.querySelector("[data-footer-wordmark-fill]");
   var skillsBars = Array.prototype.slice.call(document.querySelectorAll(".skills__progress i"));

@@ -216,7 +216,10 @@ html:has(.preloader:not(.is-complete)) body{background:var(--color-orange)}
 .hero__kicker i{width:6px;height:6px;border-radius:50%;background:var(--color-orange);display:inline-block}
 .hero__title{font-family:var(--font-accent);font-weight:900;line-height:.86;letter-spacing:-.03em;
   font-size:clamp(46px,12.4vw,190px);text-transform:uppercase;
-  transform:translateY(calc(var(--sy,0) * -0.06px));
+  transform:perspective(900px) translateY(calc(var(--sy,0) * -0.06px))
+    rotateX(calc(var(--tilt-y,0) * -4deg)) rotateY(calc(var(--tilt-x,0) * 4deg));
+  transform-origin:center;
+  transition:transform .16s ease-out;
   text-shadow:0 12px 30px rgba(223,99,65,.12)}
 .hero__title-row{display:block;overflow:hidden}
 .hero__title em{font-style:normal;color:var(--color-orange)}
