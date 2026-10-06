@@ -217,6 +217,8 @@
       var span = Math.max(260, maxScroll() - startY);
       var fp = clamp((y - startY) / span, 0, 1);
       wordmark.style.height = (fp * (window.innerWidth < 768 ? 110 : 200)).toFixed(1) + "px";
+      wordmark.style.setProperty("--wordmark-hidden", ((1 - fp) * 100).toFixed(2) + "%");
+      wordmark.style.setProperty("--wordmark-spacing", (-0.18 + fp * 0.14).toFixed(3) + "em");
     }
 
     /* 头部换肤 */

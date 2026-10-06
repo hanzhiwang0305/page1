@@ -454,7 +454,8 @@ html:has(.preloader:not(.is-complete)) body{background:var(--color-orange)}
 .footer__wordmark{position:relative;width:100%;margin-top:20px;overflow:hidden;height:0;aspect-ratio:1560/300}
 .footer__wordmark-fill{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .footer__wordmark span{
-  font-family:var(--font-accent);font-weight:900;font-size:min(9.5vw,190px);line-height:.8;letter-spacing:-.04em;
+  font-family:var(--font-accent);font-weight:900;font-size:min(9.5vw,190px);line-height:.8;letter-spacing:var(--wordmark-spacing,-.18em);
+  clip-path:inset(0 var(--wordmark-hidden,100%) 0 0);
   color:var(--color-orange);white-space:nowrap
 }
 .footer__legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding:22px 0 34px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
