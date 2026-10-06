@@ -302,6 +302,28 @@
     </div>
   </section>
 
+  <!-- ============================ 网络中的我 ============================ -->
+  <section class="networked section--black" id="networked" data-header-theme="light">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Interactive 3D · Wang-Hanzhi</p>
+        <h2 class="section__title">网络中的我</h2>
+      </div>
+      <div class="networked__viewer" data-model-viewer>
+        <canvas aria-label="可交互的 Wang-Hanzhi 3D 模型"></canvas>
+        <p class="networked__status" data-model-status role="status" aria-live="polite">正在准备 3D 场景…</p>
+        <div class="networked__controls" aria-label="模型控制">
+          <button type="button" data-model-reset title="重置视角">重置视角</button>
+          <button type="button" data-model-rotate aria-pressed="true" title="切换自动旋转">暂停旋转</button>
+        </div>
+      </div>
+      <div class="networked__credit">
+        <span>3D MODEL / <a href="https://sketchfab.com/3d-models/3d-model-aa35c71e968b4a15806d428f0b667ec1" target="_blank" rel="noopener noreferrer">3D Model</a> BY <a href="https://sketchfab.com/Wang-Hanzhi" target="_blank" rel="noopener noreferrer">Wang-Hanzhi</a> ON <a href="https://sketchfab.com" target="_blank" rel="noopener noreferrer">Sketchfab</a></span>
+        <a href="https://sketchfab.com/3d-models/3d-model-aa35c71e968b4a15806d428f0b667ec1" target="_blank" rel="noopener noreferrer">在 Sketchfab 中打开 ↗</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================ 作品 ============================ -->
   <section class="section section--ivory" id="works" data-header-theme="dark">
     <div class="container">
@@ -688,5 +710,9 @@
 </div>
 
 <script src="main.js" defer></script>
+<script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}
+</script>
+<script type="module" src="model-viewer.js"></script>
 </body>
 </html>
